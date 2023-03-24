@@ -12,9 +12,9 @@ export class CardComponent {
   @Input() label: string = "";
   @Input() total: string = "";
   @Input() percentage: string = "";
+  @Input() data: number[] = [];
 
   chartOptions: {} = {};
-
   Highcharts = Highcharts;
 
   ngOnInit() {
@@ -68,7 +68,7 @@ export class CardComponent {
         tickOptions: [],
       },
       series: [{
-        data: [71,78,39, 66]
+        data: this.data
       }]
     };
 
